@@ -6,7 +6,7 @@ return {
       function()
         require("spider").motion "w"
       end,
-      mode = { "n", "o", "x" },
+      mode = { "n", "x", "o" },
       desc = "Next subword",
     },
     {
@@ -14,7 +14,7 @@ return {
       function()
         require("spider").motion "e"
       end,
-      mode = { "n", "o", "x" },
+      mode = { "n", "x", "o" },
       desc = "End of subword",
     },
     {
@@ -22,7 +22,7 @@ return {
       function()
         require("spider").motion "b"
       end,
-      mode = { "n", "o", "x" },
+      mode = { "n", "x", "o" },
       desc = "Prev subword",
     },
     {
@@ -30,7 +30,7 @@ return {
       function()
         require("spider").motion "ge"
       end,
-      mode = { "n", "o", "x" },
+      mode = { "n", "x", "o" },
       desc = "End of prev subword",
     },
   },

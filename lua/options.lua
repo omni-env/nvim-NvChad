@@ -6,7 +6,6 @@ require "nvchad.options"
 -- o.cursorlineopt ='both' -- to enable cursorline!
 
 vim.opt.relativenumber = true -- 相对行号
-vim.opt.clipboard = {} --  禁用系统剪切板同步
 vim.opt.foldlevelstart = 99 -- 文件打开时默认不折叠
 
 -- 优先使用 unix，其次支持 dos 和 macunix

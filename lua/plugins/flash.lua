@@ -67,7 +67,7 @@ return {
           }
         end,
         mode = { "n", "x", "o" },
-        desc = "Flash between Chinese",
+        desc = "Flash with Chinese support",
       },
     },
   },
