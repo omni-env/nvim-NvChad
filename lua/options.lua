@@ -9,6 +9,9 @@ require "nvchad.options"
 vim.opt.relativenumber = true
 vim.opt.clipboard = {}
 
+-- 优先使用 unix，其次支持 dos 和 macunix
+vim.opt.fileformats = "unix,dos,mac"
+
 vim.opt.list = true
 vim.opt.listchars = {
   tab = "» ", -- 制表符 (Tab)，通常显示为右箭头
