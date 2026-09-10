@@ -7,6 +7,7 @@ local kmap = require("utils").kmap
 
 -- kmap({'n', 'v'}, ';', ':', { desc = 'CMD enter command mode' })
 kmap("i", "jj", "<ESC>", { desc = "Exit insert mode" })
+kmap("i", "jk", "<ESC>", { desc = "Exit insert mode" })
 
 -- 复制到行尾，与 C 和 D 保持统一
 kmap("n", "Y", "y$", { desc = "Yank to end of line" })
@@ -31,5 +32,4 @@ kmap("o", "w", "iw", { remap = true, desc = "Inner word" })
 kmap("o", "q", "iq", { remap = true, desc = "Inner quote" })
 kmap("o", "b", "ib", { remap = true, desc = "Inner bracket" })
 kmap("o", "f", "if", { remap = true, desc = "Inner function call" })
-kmap("o", "a", "ia", { remap = true, desc = "Inner parameter" })
 kmap("o", "t", "it", { remap = true, desc = "Inner tag" })

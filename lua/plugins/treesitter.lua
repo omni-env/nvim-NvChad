@@ -37,7 +37,7 @@ return {
       -- 4. 绑定 Neovim 原生的语法高亮与缩进
       -- 监听 FileType 事件，在新版中采用非侵入式的方式接管 buffer
       vim.api.nvim_create_autocmd("FileType", {
-        group = vim.api.nvim_create_augroup("treesitter_start", { clear = true }),
+        group = vim.api.nvim_create_augroup("TreesitterStart", { clear = true }),
         pattern = vim.list_extend({ "sh", "zsh" }, parsers),
         callback = function()
           -- syntax highlighting, provided by Neovim

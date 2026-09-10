@@ -1,6 +1,8 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
+vim.g.no_plugin_maps = true -- 禁止插件自动创建默认按键映射
+
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
@@ -36,10 +38,7 @@ vim.schedule(function()
   require "mappings"
 end)
 
-
 -- 按需加载 Neovide 配置
 if vim.g.neovide then
   require "neovide"
 end
-
-

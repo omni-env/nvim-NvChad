@@ -5,9 +5,9 @@ require "nvchad.options"
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
 
-
-vim.opt.relativenumber = true
-vim.opt.clipboard = {}
+vim.opt.relativenumber = true -- 相对行号
+vim.opt.clipboard = {} --  禁用系统剪切板同步
+vim.opt.foldlevelstart = 99 -- 文件打开时默认不折叠
 
 -- 优先使用 unix，其次支持 dos 和 macunix
 vim.opt.fileformats = "unix,dos,mac"
@@ -22,10 +22,6 @@ vim.opt.listchars = {
   -- space = "⋅", -- 普通空格。通常建议注释掉，否则满屏幕都是点，会显得杂乱
   -- eol = "↵",   -- 换行符。同样建议注释掉，保持代码界面整洁
 }
-
-vim.g.no_plugin_maps = true -- 禁止插件自动创建默认按键映射
-
-vim.opt.foldlevelstart = 99 -- 文件打开时默认不折叠
 
 -- ===================================================================
 -- 全局默认缩进配置（默认 4 个空格）
