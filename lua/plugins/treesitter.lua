@@ -1,9 +1,15 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    event = "VeryLazy",
-    opts = {
-      ensure_installed = {
+    branch = "main",
+    build = ":TSUpdate",
+    config = function()
+      -- 1. 初始化插件核心机制
+      -- 必须手动调用，因为自定义 config 函数会覆盖 lazy.nvim 的自动 setup
+      require("nvim-treesitter").setup()
+
+      -- 2. 声明项目所需的解析器目标列表
+      local parsers = {
         "lua",
         "vim",
         "vimdoc",
@@ -21,14 +27,35 @@ return {
         "css",
         "go",
         "rust",
-      },
-    },
+      }
+
+      -- 3. 异步安装解析器
+      -- 直接传入 parsers 列表。新版 API 会自动在后台比对，
+      -- 仅下载缺失的解析器，已安装的会被自动跳过（no-op），不需要手动过滤。
+      require("nvim-treesitter").install(parsers)
+
+      -- 4. 绑定 Neovim 原生的语法高亮与缩进
+      -- 监听 FileType 事件，在新版中采用非侵入式的方式接管 buffer
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("treesitter_start", { clear = true }),
+        pattern = vim.list_extend({ "sh", "zsh" }, parsers),
+        callback = function()
+          -- syntax highlighting, provided by Neovim
+          vim.treesitter.start()
+          -- folds, provided by Neovim
+          vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+          vim.wo.foldmethod = "expr"
+          -- indentation, provided by nvim-treesitter
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
+    end,
   },
 
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     branch = "main",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    dependencies = "nvim-treesitter/nvim-treesitter",
     -- 1. 基础选项设置
     opts = {
       select = {
