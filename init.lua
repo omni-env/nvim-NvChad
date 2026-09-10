@@ -35,3 +35,11 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+
+-- 按需加载 Neovide 配置
+if vim.g.neovide then
+  require "neovide"
+end
+
+

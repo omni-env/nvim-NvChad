@@ -6,7 +6,8 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "flexoki-light",
+  theme_toggle = { "catppuccin", "flexoki-light" },
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -22,3 +23,5 @@ M.base46 = {
 -- }
 
 return M
+
+
