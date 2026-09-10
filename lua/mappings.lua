@@ -27,11 +27,9 @@ kmap({ "n", "v" }, "<S-Insert>", '"+p', { desc = "Paste from system clipboard" }
 kmap({ "i", "c" }, "<S-Insert>", "<C-r>+", { desc = "Paste from system clipboard" })
 
 -- 额外文本对象映射
-kmap("o", "w", "iw", { desc = "Inner word" })
-kmap("o", '"', 'i"', { desc = "Inner double quote" })
-kmap("o", "'", "i'", { desc = "Inner single quote" })
+kmap("o", "w", "iw", { remap = true, desc = "Inner word" })
 kmap("o", "q", "iq", { remap = true, desc = "Inner quote" })
 kmap("o", "b", "ib", { remap = true, desc = "Inner bracket" })
 kmap("o", "f", "if", { remap = true, desc = "Inner function call" })
-kmap("o", "a", "ia", { remap = true, desc = "Inner tag" })
+kmap("o", "a", "ia", { remap = true, desc = "Inner parameter" })
 kmap("o", "t", "it", { remap = true, desc = "Inner tag" })

@@ -8,23 +8,6 @@ return {
     },
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
-
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
-
-  {
-    "kylechui/nvim-surround",
-    version = "^4.0.0",
-    event = "VeryLazy",
-  },
-
   {
     "rmagatti/auto-session",
     lazy = false,
@@ -37,11 +20,28 @@ return {
     },
   },
 
+  -- These are some examples, uncomment them if you want to see them work!
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
+  },
+
+  -- test new blink
+  -- { import = "nvchad.blink.lazyspec" },
+
   {
     "keaising/im-select.nvim",
-    event = "VeryLazy",
+    event = "InsertEnter",
     config = function()
       require("im_select").setup {}
     end,
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "^4.0.0",
+    event = { "BufReadPost", "BufNewFile" },
   },
 }

@@ -2,7 +2,7 @@ return {
   "chrisgrieser/nvim-spider",
   keys = {
     {
-      ",w",
+      "w",
       function()
         require("spider").motion "w"
       end,
@@ -10,7 +10,7 @@ return {
       desc = "Next subword",
     },
     {
-      ",e",
+      "e",
       function()
         require("spider").motion "e"
       end,
@@ -18,7 +18,7 @@ return {
       desc = "End of subword",
     },
     {
-      ",b",
+      "b",
       function()
         require("spider").motion "b"
       end,
@@ -26,7 +26,7 @@ return {
       desc = "Prev subword",
     },
     {
-      ",ge",
+      "ge",
       function()
         require("spider").motion "ge"
       end,

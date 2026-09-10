@@ -2,7 +2,7 @@ return {
   {
     "nvim-mini/mini.extra",
     version = false,
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = { "nvim-mini/mini.ai" },
     config = function()
       local extra = require "mini.extra"
